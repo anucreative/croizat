@@ -1,0 +1,66 @@
+:root {
+  /* Color styles */
+  --light--body: rgba(51, 51, 51, 1);
+  --light--subtitle: rgba(103, 103, 103, 1);
+  --light--primary: rgba(219, 9, 98, 1);
+  --light--background-primary: rgba(255, 255, 255, 1);
+  --light--background-secondary: rgba(245, 245, 245, 1);
+  --dark--body: rgba(242, 242, 242, 1);
+  --dark--subtitle: rgba(130, 130, 130, 1);
+  --dark--primary: rgba(219, 9, 98, 1);
+  --dark--background-primary: rgba(0, 0, 0, 1);
+  --dark--background-secondary: rgba(34, 34, 34, 1);
+
+  /* Text-size styles */
+  --default--heading: 36px;
+  --default--title: 18px;
+  --default--subtitle: 18px;
+  --default--body: 18px;
+  --dark--menu: 18px;
+
+  /* spacing styles */
+  --padding--small: 3px;
+  --padding--large: 10px;
+  --border--radius: 5px;
+}
+
+body {
+  background-color: var(--dark--background-primary);
+  color: var(--dark--body);
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+a {
+  color: var(--dark--primary);
+
+}
+
+.wp-element-button {
+  margin: 0 auto;
+  background-color: var(--dark--primary);
+  color: var(--dark--body);
+  padding: var(--padding--large);
+  border-radius: var(--border--radius);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul>li {
+  text-transform: uppercase;
+  color: var(--dark--primary);
+  font-weight: 600;
+}
+
+ul>li>ul>li {
+  text-transform: none;
+  color: var(--dark--body);
+  font-weight: 400;
+}
