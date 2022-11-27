@@ -1,0 +1,95 @@
+.header {
+  background-color: var(--dark--background-primary);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--height--menu);
+  }
+}
+
+/* Logo */
+.logo {
+  color: var(--dark--body);
+  padding: var(--padding--extra-large);
+}
+
+/* Nav menu */
+.nav {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark--background-primary);
+  overflow: hidden;
+  top: -100%;
+  transition: all 0.25s ease-in-out;
+  z-index: -1;
+}
+
+.menu a {
+  display: block;
+  padding: var(--padding--large);
+  color: var(--dark--body);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: var(--dark--menu);
+  border-radius: var(--border--radius);
+}
+
+.menu a:hover {
+  background-color: var(--dark--primary);
+}
+
+/* Menu Icon */
+.trigger {
+  cursor: pointer;
+  position: absolute;
+  font-size: 30px;
+  padding: var(--padding--extra-large);
+  right: var(--padding--extra-large);
+  line-height: var(--height--menu);
+}
+
+/* Style label tag */
+
+.checkbox {
+  display: none;
+}
+
+/* Hide checkbox */
+
+/* Toggle menu icon */
+.checkbox:checked~nav {
+  top: 0;
+}
+
+@media (min-width: 768px) {
+
+  .nav {
+    top: 0;
+    position: relative;
+    width: fit-content;
+    z-index: 0;
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  .menu li {}
+
+  .trigger {
+    display: none;
+  }
+}

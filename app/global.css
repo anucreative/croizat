@@ -16,51 +16,131 @@
   --default--title: 18px;
   --default--subtitle: 18px;
   --default--body: 18px;
-  --dark--menu: 18px;
+  --dark--menu: 14px;
 
   /* spacing styles */
   --padding--small: 3px;
   --padding--large: 10px;
+  --padding--extra-large: 25px;
   --border--radius: 5px;
+
+  /* sizes */
+  --height--menu: 70px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--dark--background-primary);
   color: var(--dark--body);
+  padding: 0;
+  margin: 0;
+}
+
+.body {
+  padding: var(--padding--large);
 }
 
 h2 {
   text-align: center;
   text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  /* lines behind */
+  display: table;
+  width: 100%;
+  white-space: nowrap;
+  padding-top: var(--height--menu);
+}
+
+/* lines behind */
+h2::before,
+h2::after {
+  border-top: 3px solid var(--dark--primary);
+  content: '';
+  display: table-cell;
+  position: relative;
+  top: 0.5em;
+  width: 35%;
+}
+
+h3 {
+  text-transform: uppercase;
+  color: var(--dark--primary);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
 a {
-  color: var(--dark--primary);
+  color: var(--dark--body);
+  transition: all 0.3s;
+}
 
+a:hover {
+  color: var(--dark--primary);
+}
+
+/* Columns */
+.wp-block-column {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#tarifs .wp-block-column>ul>li {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  padding: var(--padding--small);
+}
+
+@media (min-width: 768px) {
+  .wp-block-columns {
+    display: flex;
+    gap: var(--padding--extra-large);
+  }
+
+  .wp-block-column {
+    flex: 1;
+  }
+
+  #tarifs .wp-block-columns {
+    flex-wrap: wrap;
+  }
+
+  #tarifs .wp-block-column {
+    flex: calc(50% - var(--padding--extra-large));
+  }
+}
+
+.wp-block-buttons {
+  text-align: center;
+  height: 45px;
 }
 
 .wp-element-button {
-  margin: 0 auto;
   background-color: var(--dark--primary);
   color: var(--dark--body);
   padding: var(--padding--large);
   border-radius: var(--border--radius);
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+
+.wp-element-button:hover {
+  color: var(--dark--body);
+  background-color: var(--dark--background-primary);
+  border-color: var(--dark--primary);
 }
 
 ul {
   list-style-type: none;
-}
-
-ul>li {
-  text-transform: uppercase;
-  color: var(--dark--primary);
-  font-weight: 600;
-}
-
-ul>li>ul>li {
-  text-transform: none;
-  color: var(--dark--body);
-  font-weight: 400;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
