@@ -28,6 +28,27 @@
   --height--menu: 70px;
 }
 
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -37,10 +58,18 @@ body {
   color: var(--dark--body);
   padding: 0;
   margin: 0;
+  line-height: 2rem;
 }
 
-.body {
-  padding: var(--padding--large);
+section:not(.body) {
+  padding: calc(var(--height--menu) / 2) var(--padding--extra-large);
+  max-width: 1200px;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+}
+
+section:nth-of-type(even) {
+  background-color: var(--dark--background-primary);
 }
 
 h2 {
@@ -52,7 +81,6 @@ h2 {
   display: table;
   width: 100%;
   white-space: nowrap;
-  padding-top: var(--height--menu);
 }
 
 /* lines behind */
@@ -75,26 +103,48 @@ h3 {
   margin: 0;
 }
 
+ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
 a {
-  color: var(--dark--body);
+  color: var(--dark--primary);
+  text-decoration: none;
+  border-bottom: 3px solid;
   transition: all 0.3s;
 }
 
 a:hover {
-  color: var(--dark--primary);
+  color: var(--dark--body);
 }
 
 /* Columns */
 .wp-block-column {
-  text-align: center;
   margin-bottom: 1rem;
 }
 
+/* Tarifs */
 #tarifs .wp-block-column>ul>li {
   display: flex;
   justify-content: space-between;
   text-align: left;
-  padding: var(--padding--small);
+}
+
+/* Hours / transport */
+#horaires-et-acces .wp-block-column>ul>li {
+  display: inline;
+}
+
+#horaires-et-acces .wp-block-column>ul>li:not(:last-child)::after {
+  content: ', ';
+}
+
+#horaires-et-acces h3,
+#transport h3 {
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -114,33 +164,4 @@ a:hover {
   #tarifs .wp-block-column {
     flex: calc(50% - var(--padding--extra-large));
   }
-}
-
-.wp-block-buttons {
-  text-align: center;
-  height: 45px;
-}
-
-.wp-element-button {
-  background-color: var(--dark--primary);
-  color: var(--dark--body);
-  padding: var(--padding--large);
-  border-radius: var(--border--radius);
-  text-transform: uppercase;
-  font-weight: 700;
-  text-decoration: none;
-  border: 2px solid transparent;
-}
-
-.wp-element-button:hover {
-  color: var(--dark--body);
-  background-color: var(--dark--background-primary);
-  border-color: var(--dark--primary);
-}
-
-ul {
-  list-style-type: none;
-  text-align: center;
-  padding: 0;
-  margin: 0;
 }

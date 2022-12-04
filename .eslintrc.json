@@ -4,9 +4,20 @@
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
+  "plugins": [
+    "import",
+    "react-hooks",
+    "sort-destructure-keys"
+  ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
+    "sort-destructure-keys/sort-destructure-keys": [
+      "warn",
+      {
+        "caseSensitive": false
+      }
+    ],
     "import/order": [
       2,
       {

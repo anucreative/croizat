@@ -1,0 +1,20 @@
+.button {
+  width: fit-content;
+  background: var(--dark--primary);
+  color: var(--dark--body);
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  padding: var(--padding--large) var(--padding--extra-large);
+  margin: var(--padding--extra-large) auto;
+  border-radius: var(--border--radius);
+  border: 3px solid var(--dark--primary);
+}
+
+.button:hover {
+  background: transparent;
+  color: var(--dark--body);
+}
