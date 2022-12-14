@@ -1,44 +1,73 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import styles from './styles.module.css'
 
+const options = { threshold: 0 }
+
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const target = typeof window !== 'undefined' ? window.document.body : null
-  console.debug('ScrollObserver.1', { isScrolled, target })
+  const [isScrolled, setIsScrolled] = useState('')
+
+  const headerRef = useRef<HTMLElement>(null)
+
+  const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+
+      if (entry.isIntersecting) {
+        setIsScrolled(entry.target.id)
+      }
+    })
+  }
 
   useEffect(() => {
-    console.debug('ScrollObserver.2', target)
-    if (!target) {
-      return
+    const sections = [...document.querySelectorAll('.section')]
+
+    const observer = new IntersectionObserver(handleIntersect, options)
+
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
+
+    // Detach listener
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section)
+      })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
-    const observer = new IntersectionObserver(
-      ([e]) => setIsScrolled(e.boundingClientRect.y > 70)
-    )
 
-    console.debug('ScrollObserver.3', { isScrolled })
 
-    observer.observe(target)
-    return () => observer.unobserve(target)
-  })
+  const links = [
+    { link: "horaires-et-acces", title: "Horaires et accès" },
+    { link: "la-salle", title: "La salle" },
+    { link: "tarifs", title: "Tarifs" },
+    { link: "events", title: "Évènements" },
+    { link: "contact", title: "Contact" },
+  ]
 
   return (
-    <header className={styles.header}>
-      <a href="#" className={styles.logo}><img src="./logo.svg" alt="Croizat" /></a>
-      <label className={styles.trigger} htmlFor="side-menu">&#8801;</label>
-      <input className={styles.checkbox} type="checkbox" id="side-menu" />
-      <nav className={styles.nav}>
-        <ul className={styles.menu}>
-          <li><a href="#horaires-et-acces">Horaires et accès</a></li>
-          <li><a href="#la-salle">La salle</a> </li>
-          <li><a href="#tarifs">Tarifs</a></li>
-          <li><a href="#evenements">Évènements</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <>
+      <header ref={headerRef} className={styles.header}>
+        <a href="/" className={styles.logo}><img src="/logo.svg" alt="Croizat" /></a>
+        <label className={styles.trigger} htmlFor="side-menu">&#8801;</label>
+        <input className={styles.checkbox} type="checkbox" id="side-menu" />
+        <nav className={styles.nav}>
+          <ul className={styles.menu}>
+            {links.map(item => {
+              let className = styles.item
+              if (isScrolled === item.link) {
+                className = `${className} ${styles.selected}`
+              }
+              return (
+                <li key={item.link}><a className={className} href={item.link}>{item.title}</a></li>
+              )
+            })}
+          </ul>
+        </nav>
+      </header>
+    </>
   )
 }

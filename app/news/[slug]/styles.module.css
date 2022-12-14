@@ -1,0 +1,12 @@
+.masthead {
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  border-radius: 0;
+}
+
+.excerpt {
+  font-size: 2rem;
+}

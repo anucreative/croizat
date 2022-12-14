@@ -1,13 +1,18 @@
 .wrapper {
-  width: 100%;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  align-items: flex-end;
   position: relative;
   margin-top: calc(var(--height--menu) * -1);
 }
 
-.video {
-  width: 100vw;
-  height: 80vh;
+.wrapper img,
+.wrapper video {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  position: relative;
 }
 
 .wrapper:after {

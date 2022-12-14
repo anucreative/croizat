@@ -8,9 +8,8 @@ type Props = {
 }
 
 export function Post({ post }: Props) {
-
   return (
-    <li className={styles.card} key={post.slug}>
+    <li className={styles.card}>
       <div className={styles.image}>
         <Image src={post.featured_image} alt={post.slug} fill style={{ objectFit: 'cover' }} />
       </div>

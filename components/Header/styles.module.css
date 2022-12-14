@@ -21,6 +21,10 @@
   border: 0 none;
 }
 
+.logo:hover {
+  filter: grayscale(1.0);
+}
+
 /* Nav menu */
 .nav {
   width: 100%;
@@ -37,8 +41,7 @@
   z-index: -1;
 }
 
-.menu a {
-  border: 0 none;
+.item {
   display: block;
   padding: var(--padding--large);
   text-decoration: none;
@@ -46,10 +49,13 @@
   font-weight: 700;
   font-size: var(--dark--menu);
   color: var(--dark--body);
+  border-bottom: 3px solid transparent;
 }
 
-.menu a:hover {
+.item:hover,
+.item.selected {
   color: var(--dark--primary);
+  border-bottom-color: var(--dark--primary);
 }
 
 /* Menu Icon */

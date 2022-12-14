@@ -1,11 +1,11 @@
+import React from 'react'
+
 import styles from './styles.module.css'
 
-export function Banner() {
+export function Banner({ children }: { children: React.ReactNode }) {
   return (
     <div className={styles.wrapper}>
-      <video className={styles.video} autoPlay loop muted playsInline>
-        <source src="./sophia.mp4" type="video/mp4" />
-      </video>
+      {children}
     </div>
   )
 }

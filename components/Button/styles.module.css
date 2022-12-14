@@ -1,5 +1,4 @@
 .button {
-  width: fit-content;
   background: var(--dark--primary);
   color: var(--dark--body);
   text-transform: uppercase;
@@ -8,8 +7,8 @@
   font-weight: 700;
   display: block;
   text-align: center;
-  padding: var(--padding--large) var(--padding--extra-large);
-  margin: var(--padding--extra-large) auto;
+  padding: var(--padding--large);
+  margin: var(--padding--extra-large) 0;
   border-radius: var(--border--radius);
   border: 3px solid var(--dark--primary);
 }
@@ -17,4 +16,13 @@
 .button:hover {
   background: transparent;
   color: var(--dark--body);
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: var(--padding--large) var(--padding--extra-large);
+    margin: var(--padding--extra-large) auto;
+    width: fit-content;
+
+  }
 }

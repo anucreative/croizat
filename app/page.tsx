@@ -7,6 +7,7 @@ import { Header } from '../components/Header'
 import { Map } from '../components/Map'
 import { Posts } from '../components/Posts'
 
+
 async function getHome() {
   const res = await fetch('https://public-api.wordpress.com/rest/v1.1/sites/gymnasecroizat.wordpress.com/posts/slug:home')
   return await res.json()
@@ -35,7 +36,11 @@ export default async function Page() {
   return (
     <>
       <Header />
-      <Banner />
+      <Banner>
+        <video autoPlay loop muted playsInline>
+          <source src="./sophia.mp4" type="video/mp4" />
+        </video>
+      </Banner>
       <section className='body'>
         {elements.map((child: React.ReactElement) => {
           const key: ComponentKey = child.props.id

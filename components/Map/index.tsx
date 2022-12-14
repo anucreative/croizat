@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 
 import { Loader } from '@googlemaps/js-api-loader';
+
 import { Button } from '../Button'
 
 import styles from './styles.module.css'
@@ -12,9 +13,8 @@ export function Map() {
   const googlemap = useRef(null);
 
   useEffect(() => {
-    console.debug(window, process.env)
     const loader = new Loader({
-      apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+      apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
       version: 'weekly',
     });
 
