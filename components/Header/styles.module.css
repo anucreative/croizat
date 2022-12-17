@@ -32,6 +32,7 @@
   background-color: var(--dark--background-primary);
   opacity: 0;
   position: fixed;
+  padding: 0 var(--padding--extra-large);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,6 +40,7 @@
   top: -100%;
   transition: all 0.25s ease-in-out;
   z-index: -1;
+  margin-right: calc(var(--padding--large) * -1)
 }
 
 .item {

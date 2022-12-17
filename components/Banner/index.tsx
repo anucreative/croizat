@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 
 export function Banner({ children }: { children: React.ReactNode }) {
   return (
-    <div className={styles.wrapper}>
+    <div id='banner' className={styles.banner}>
       {children}
     </div>
   )

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import styles from './styles.module.css'
 
-const options = { threshold: 0 }
+const options = { threshold: [0, 0.9] }
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState('')
@@ -14,14 +14,24 @@ export function Header() {
   const handleIntersect = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
 
+      if (entry.target.id === 'banner') {
+        if (entry.isIntersecting) {
+          headerRef.current?.classList.remove(styles.scrolled)
+        } else {
+          headerRef.current?.classList.add(styles.scrolled)
+        }
+        return
+      }
+
       if (entry.isIntersecting) {
         setIsScrolled(entry.target.id)
       }
+
     })
   }
 
   useEffect(() => {
-    const sections = [...document.querySelectorAll('.section')]
+    const sections: Element[] = [document.querySelector('#banner'), ...document.querySelectorAll('.section')].filter(Boolean)
 
     const observer = new IntersectionObserver(handleIntersect, options)
 
@@ -35,7 +45,6 @@ export function Header() {
         observer.unobserve(section)
       })
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
 

@@ -6,6 +6,7 @@ import Image from 'next/image'
 
 import { Banner } from '../../../components/Banner'
 import { Header } from '../../../components/Header'
+import { Posts } from '../../../components/Posts'
 
 import styles from './styles.module.css'
 
@@ -19,12 +20,16 @@ async function getPost(slug: string) {
   return await res.json()
 }
 
+async function getPosts() {
+  const res = await fetch('https://public-api.wordpress.com/rest/v1.1/sites/gymnasecroizat.wordpress.com/posts')
+  return await res.json()
+}
+
 const parser = new Parser()
 
 
 export default async function Page({ params }: Props) {
-  const post = await getPost(params.slug)
-  console.debug('getPost', post)
+  const [post, posts] = await Promise.all([getPost(params.slug), getPosts()])
 
   const { content, excerpt, post_thumbnail, title } = post
 
@@ -44,8 +49,11 @@ export default async function Page({ params }: Props) {
         </section>
       </Banner>
     )}
-    <section className={styles.content}>
-      {elements}
+    <section className="body">
+      <section className={styles.content}>
+        {elements}
+      </section>
+      <Posts posts={posts.posts} />
     </section>
   </>)
 

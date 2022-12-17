@@ -1,3 +1,4 @@
+import { Banner } from '../../components/Banner'
 import { Header } from '../../components/Header'
 import { Posts } from '../../components/Posts'
 
@@ -13,6 +14,11 @@ export default async function Page() {
   return (
     <>
       <Header />
+      <Banner>
+        <video autoPlay loop muted playsInline>
+          <source src="./sophia.mp4" type="video/mp4" />
+        </video>
+      </Banner>
       <section className='body'>
         <Posts posts={posts.posts} />
       </section>
