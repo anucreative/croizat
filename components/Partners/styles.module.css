@@ -1,0 +1,31 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: calc(100% / 4);
+  height: 10rem;
+  border: 0 none;
+  margin-bottom: var(--padding--extra-large);
+}
+
+.item a {
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  border: 0 none;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 100%;
+  overflow: hidden;
+  background: white;
+  opacity: 0.5;
+  transition: var(--transition);
+  filter: grayscale(1);
+}
+
+.item a:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}

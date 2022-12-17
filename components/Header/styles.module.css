@@ -38,7 +38,7 @@
   justify-content: center;
   overflow: hidden;
   top: -100%;
-  transition: all 0.25s ease-in-out;
+  transition: var(--transition);
   z-index: -1;
   margin-right: calc(var(--padding--large) * -1)
 }

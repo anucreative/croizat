@@ -24,6 +24,8 @@
   --padding--extra-large: 25px;
   --border--radius: 5px;
 
+  --transition: all 0.3s ease-in-out;
+
   /* sizes */
   --height--menu: 70px;
 }
@@ -121,7 +123,7 @@ a {
   color: var(--dark--primary);
   text-decoration: none;
   border-bottom: 3px solid;
-  transition: all 0.3s;
+  transition: var(--transition);
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-all;
