@@ -179,3 +179,38 @@ a:hover {
     flex: calc(50% - var(--padding--extra-large));
   }
 }
+
+dl {
+  display: table;
+  padding: 0;
+  margin: 0.3rem 0;
+}
+
+dt {
+  display: inline-block;
+  width: 35%;
+  text-transform: uppercase;
+  color: var(--dark--primary);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+  height: 4.7rem;
+}
+
+dd {
+  display: inline-block;
+  width: 65%;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+}
+
+dd a {
+  color: var(--dark--body);
+}
+
+dd a:hover {
+  color: var(--dark--primary);
+}

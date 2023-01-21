@@ -1,0 +1,26 @@
+.input {
+  width: 100%;
+  padding: var(--padding--large);
+  font-family: var(--font--work-sans);
+  font-size: 1.5rem;
+  margin-bottom: var(--padding--extra-large);
+  border-radius: var(--border--radius);
+  border: 1px solid var(--dark--subtitle);
+}
+
+.input[selected] {
+  border-color: var(--dark--primary);
+}
+
+.grid {
+  gap: var(--padding--extra-large);
+}
+
+.column {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  display: flex;
+
+}

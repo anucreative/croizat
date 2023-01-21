@@ -2,9 +2,13 @@
 
 import { useEffect, useRef, useState } from 'react'
 
+import Image from 'next/image'
+
+import Logo from '../../public/logo.svg'
+
 import styles from './styles.module.css'
 
-const options = { threshold: [0, 0.9] }
+const options = { threshold: [0, 1] }
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState('')
@@ -50,17 +54,19 @@ export function Header() {
 
 
   const links = [
-    { link: "horaires-et-acces", title: "Horaires et accès" },
-    { link: "la-salle", title: "La salle" },
-    { link: "tarifs", title: "Tarifs" },
-    { link: "events", title: "Évènements" },
-    { link: "contact", title: "Contact" },
+    { link: "/#horaires-et-acces", title: "Horaires et accès" },
+    { link: "/#la-salle", title: "La salle" },
+    { link: "/#tarifs", title: "Tarifs" },
+    { link: "/#events", title: "Évènements" },
+    { link: "/#contact", title: "Contact" },
   ]
 
   return (
     <>
       <header ref={headerRef} className={styles.header}>
-        <a href="/" className={styles.logo}><img src="/logo.svg" alt="Croizat" /></a>
+        <a href="/#" className={styles.logo}>
+          <Image src={Logo} alt="Croizat" width={130} height={22} />
+        </a>
         <label className={styles.trigger} htmlFor="side-menu">&#8801;</label>
         <input className={styles.checkbox} type="checkbox" id="side-menu" />
         <nav className={styles.nav}>

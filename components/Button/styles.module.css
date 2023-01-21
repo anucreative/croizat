@@ -11,6 +11,7 @@
   margin: var(--padding--extra-large) 0;
   border-radius: var(--border--radius);
   border: 3px solid var(--dark--primary);
+  cursor: pointer;
 }
 
 .button:hover {
@@ -23,6 +24,11 @@
     padding: var(--padding--large) var(--padding--extra-large);
     margin: var(--padding--extra-large) auto;
     width: fit-content;
-
   }
+}
+
+.auto {}
+
+.full {
+  width: 100%;
 }

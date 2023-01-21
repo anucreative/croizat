@@ -4,7 +4,7 @@
 }
 
 .item {
-  width: calc(100% / 4);
+  width: calc(100% / 2);
   height: 10rem;
   border: 0 none;
   margin-bottom: var(--padding--extra-large);
@@ -28,4 +28,17 @@
 .item a:hover {
   opacity: 1;
   filter: grayscale(0);
+}
+
+
+@media (min-width: 480px) {
+  .item {
+    width: calc(100% / 3);
+  }
+}
+
+@media (min-width: 768px) {
+  .item {
+    width: calc(100% / 4);
+  }
 }

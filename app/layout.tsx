@@ -6,7 +6,8 @@ import './global.css'
 
 const workSans = Work_Sans({
   weight: ['400', '700'],
-  subsets: ["latin"]
+  subsets: ["latin"],
+  variable: '--font--work-sans',
 });
 
 
