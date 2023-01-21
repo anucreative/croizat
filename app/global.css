@@ -89,7 +89,7 @@ h2 {
   /* lines behind */
   display: table;
   width: 100%;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 /* lines behind */

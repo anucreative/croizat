@@ -5,6 +5,7 @@ import { Parser } from 'html-to-react'
 import { Banner } from '../components/Banner'
 import { Contact } from '../components/Contact'
 import { Header } from '../components/Header'
+import { Lightbox } from '../components/Lightbox'
 import { Map } from '../components/Map'
 import { Partners } from '../components/Partners'
 import { Posts } from '../components/Posts'
@@ -55,6 +56,7 @@ export default async function Page() {
 
           return React.cloneElement(child, { ...child.props, key });
         })}
+        <Lightbox />
         <Posts posts={posts.posts} />
         <Partners />
         <Contact />

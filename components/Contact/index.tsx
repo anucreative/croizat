@@ -13,7 +13,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="section">
-      <h2>Contact-nous</h2>
+      <h2>Contacte-nous</h2>
       <div className={styles.grid}>
         <div className={styles.column}>
           <form action="/send-data-here" method="post" onSubmit={handleSubmit}>
