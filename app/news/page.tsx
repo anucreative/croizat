@@ -20,6 +20,7 @@ export default async function Page() {
         </video>
       </Banner>
       <section className='body'>
+        {/* @ts-expect-error Server Component */}
         <Posts posts={posts.posts} />
       </section>
     </>)

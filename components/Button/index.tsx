@@ -8,13 +8,12 @@ type Props = {
   href?: string
   onClick?: (event: React.FormEvent<HTMLButtonElement>) => null
   target?: string
-  type: HTMLButtonElement["type"]
   width?: string
 }
 
-export function Button({ as: Component = 'a', children, href, target, type = 'button', width = 'auto' }: Props) {
+export function Button({ as: Component = 'a', children, href, target, width = 'auto' }: Props) {
 
   return (
-    <Component href={href} className={`${styles.button} ${styles[width]}`} target={target} type={type}>{children}</Component>
+    <Component href={href} className={`${styles.button} ${styles[width]}`} target={target}>{children}</Component>
   )
 }

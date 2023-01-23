@@ -1,13 +1,12 @@
 import Link from 'next/link'
-import type { WP_REST_API_Post } from 'wp-types';
 
-import { Button } from '../Button'
-import { Post } from '../Post';
+import buttonStyles from '../Button/styles.module.css'
+import { Post, PostType } from '../Post';
 
 import styles from './styles.module.css'
 
 type Props = {
-  posts: WP_REST_API_Post[]
+  posts: PostType[]
 }
 
 async function getPosts() {
@@ -26,7 +25,7 @@ export async function Posts({ posts }: Props) {
       <ul className={styles.list}>
         {posts.map(post => <Post key={post.id} post={post} />)}
       </ul>
-      <Button as={Link} href="/news">Voir toutes les nouvelles</Button>
+      <Link className={buttonStyles.button} href="/news">Voir toutes les nouvelles</Link>
     </section>
   );
 }

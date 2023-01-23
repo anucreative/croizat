@@ -19,11 +19,13 @@ export function Map() {
     });
 
     loader.load().then(() => {
-      new window.google.maps.Map(googlemap.current, {
-        center: { lat: 45.5788, lng: 5.9035 },
-        zoom: 15,
-        mapId: '63b8beb11338cdbf'
-      });
+      if (googlemap.current) {
+        new window.google.maps.Map(googlemap.current, {
+          center: { lat: 45.5788, lng: 5.9035 },
+          zoom: 15,
+          mapId: '63b8beb11338cdbf'
+        });
+      }
     })
   }, []);
 

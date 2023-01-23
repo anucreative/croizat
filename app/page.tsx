@@ -51,12 +51,14 @@ export default async function Page() {
           // We want to replace placeholders with actual components
           const Component = COMPONENTS[key]
           if (Component) {
+            {/* @ts-expect-error Server Component */ }
             return <Component key={key}>{child}</Component>
           }
 
           return React.cloneElement(child, { ...child.props, key });
         })}
         <Lightbox />
+        {/* @ts-expect-error Server Component */}
         <Posts posts={posts.posts} />
         <Partners />
         <Contact />

@@ -12,7 +12,6 @@ import styles from './styles.module.css'
 
 type Props = {
   params: { slug: string }
-  searchParams: { id: string }
 }
 
 async function getPost(slug: string) {
@@ -38,23 +37,26 @@ export default async function Page({ params }: Props) {
   const heading = parser.parse(title)
   const lead = parser.parse(excerpt)
 
-  return (<>
-    <Header />
-    {post_thumbnail && (
-      <Banner>
-        <Image src={post_thumbnail.URL} alt={title} fill objectFit="cover" />
-        <section className={styles.masthead}>
-          <h1 className={styles.title}>{heading}</h1>
-          {excerpt && <div className={styles.excerpt}>{lead}</div>}
+  return (
+    <>
+      <Header />
+      {post_thumbnail && (
+        <Banner>
+          <Image src={post_thumbnail.URL} alt={title} fill objectFit="cover" />
+          <section className={styles.masthead}>
+            <h1 className={styles.title}>{heading}</h1>
+            {excerpt && <div className={styles.excerpt}>{lead}</div>}
+          </section>
+        </Banner>
+      )}
+      <section className="body">
+        <section className={styles.content}>
+          {elements}
         </section>
-      </Banner>
-    )}
-    <section className="body">
-      <section className={styles.content}>
-        {elements}
+        {/* @ts-expect-error Server Component */}
+        <Posts posts={posts.posts} />
       </section>
-      <Posts posts={posts.posts} />
-    </section>
-  </>)
+    </>
+  )
 
 }

@@ -8,7 +8,7 @@ import styles from './styles.module.css'
 
 export function Contact() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    console.debug(event.target.children)
+    console.debug(event.target)
   }
 
   return (
@@ -20,7 +20,7 @@ export function Contact() {
             <input className={styles.input} type="text" id="name" name="name" placeholder='Prénom / Nom' required />
             <input className={styles.input} id="email" name="email" type="email" placeholder='Adresse e-mail' required />
             <textarea className={styles.input} id="comment" name="comment" placeholder='Tes idées / commentaires' required />
-            <Button width="full" type=" submit">Dis-nous</Button>
+            <Button width="full">Dis-nous</Button>
           </form>
 
         </div>

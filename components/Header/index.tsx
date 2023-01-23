@@ -35,18 +35,22 @@ export function Header() {
   }
 
   useEffect(() => {
-    const sections: Element[] = [document.querySelector('#banner'), ...document.querySelectorAll('.section')].filter(Boolean)
+    const sections = [document.querySelector('#banner'), ...document.querySelectorAll('.section')].filter(Boolean)
 
     const observer = new IntersectionObserver(handleIntersect, options)
 
+    if (!sections) {
+      return
+    }
+
     sections.forEach((section) => {
-      observer.observe(section)
+      section && observer.observe(section)
     })
 
     // Detach listener
     return () => {
       sections.forEach((section) => {
-        observer.unobserve(section)
+        section && observer.unobserve(section)
       })
     }
   }, [])

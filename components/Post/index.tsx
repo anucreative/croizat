@@ -1,10 +1,17 @@
 import Image from 'next/image'
-import type { WP_REST_API_Post } from 'wp-types';
 
 import styles from './styles.module.css'
 
+export type PostType = {
+  excerpt: string
+  featured_image: string
+  id: string
+  slug: string
+  title: string
+}
+
 type Props = {
-  post: WP_REST_API_Post
+  post: PostType
 }
 
 export function Post({ post }: Props) {
