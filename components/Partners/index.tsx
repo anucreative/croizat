@@ -96,7 +96,7 @@ export function Partners() {
           return (
             <li className={styles.item} key={partner.name} >
               <a href={partner.url} target="_blank" rel="noreferrer">
-                <Image className={styles.logo} src={partner.image} objectFit="contain" alt={partner.name} fill />
+                <Image className={styles.logo} src={partner.image} alt={partner.name} fill />
               </a>
             </li>
           )
