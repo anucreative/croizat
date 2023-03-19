@@ -32,7 +32,11 @@ export function Map() {
   return (
     <>
       <div className={styles.embed} ref={googlemap} />
-      <Button href="https://www.google.com/maps/place/Chamb%C3%A9ry+Escalade/@45.5788932,5.9035098,17z/data=!3m1!4b1!4m5!3m4!1s0x478ba842487b1d97:0x8e8fc89dabfd3faf!8m2!3d45.5788677!4d5.9057889" target='_blank'>Voir sur Google Maps</Button>
+      <section id="map-button">
+        <Button href="https://www.google.com/maps/place/Chamb%C3%A9ry+Escalade/@45.5788932,5.9035098,17z/data=!3m1!4b1!4m5!3m4!1s0x478ba842487b1d97:0x8e8fc89dabfd3faf!8m2!3d45.5788677!4d5.9057889" target='_blank'>
+          Voir sur Google Maps
+        </Button>
+      </section>
     </>
   );
 }

@@ -23,7 +23,7 @@ export async function Posts({ posts }: Props) {
     <section id="events" className="section">
       <h2>Évènements</h2>
       <ul className={styles.list}>
-        {posts.map(post => <Post key={post.id} post={post} />)}
+        {posts.map(post => <Post key={post.slug} post={post} />)}
       </ul>
       <Link className={buttonStyles.button} href="/news">Voir toutes les nouvelles</Link>
     </section>

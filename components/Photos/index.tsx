@@ -11,7 +11,7 @@ type Photo = {
   image: StaticImageData
 }
 
-export function Photos(props) {
+export function Photos(props: Photo) {
   // Have to fetch deeply nested images in gallery
   const photos = props.children?.props?.children?.props?.children
   const [index, setIndex] = useState(0)
@@ -52,7 +52,7 @@ export function Photos(props) {
             const photo = node.props?.children?.props
             return (
               <li className={styles.item} key={photo?.src} >
-                <Image className={styles.logo} onClick={() => showImage(i)} src={photo['data-orig-file']} objectFit="cover" alt={photo.alt} fill />
+                <Image className={styles.logo} onClick={() => showImage(i)} src={photo['data-orig-file']} alt={photo.alt} fill />
               </li>
             )
           })}
@@ -62,7 +62,7 @@ export function Photos(props) {
         <div className={styles.lightbox} onClick={hideLightBox}>
           <button className={styles.button} onClick={showPrev}>&lsaquo;</button>
           <div className={styles.image}>
-            <Image src={photos[index].props?.children?.props?.['data-orig-file']} objectFit="cover" alt="" fill />
+            <Image className={styles.cover} src={photos[index].props?.children?.props?.['data-orig-file']} alt="" fill />
           </div>
           <button className={styles.button} onClick={showNext}>&rsaquo;</button>
         </div>

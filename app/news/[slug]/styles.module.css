@@ -1,3 +1,7 @@
+.cover {
+  object-fit: cover;
+}
+
 .masthead {
   position: relative;
   z-index: 2;

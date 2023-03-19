@@ -42,7 +42,7 @@ export default async function Page({ params }: Props) {
       <Header />
       {post_thumbnail && (
         <Banner>
-          <Image src={post_thumbnail.URL} alt={title} fill objectFit="cover" />
+          <Image className={styles.cover} src={post_thumbnail.URL} alt={title} fill />
           <section className={styles.masthead}>
             <h1 className={styles.title}>{heading}</h1>
             {excerpt && <div className={styles.excerpt}>{lead}</div>}

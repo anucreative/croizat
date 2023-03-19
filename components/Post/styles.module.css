@@ -24,9 +24,10 @@
   }
 }
 
-
-
-
 .link {
   text-decoration: none;
+}
+
+.cover {
+  object-fit: cover;
 }

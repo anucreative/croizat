@@ -61,6 +61,10 @@
   overflow: hidden;
 }
 
+.cover {
+  object-fit: cover;
+}
+
 .button {
   color: var(--dark--background-primary);
   background-color: var(--dark--primary);
@@ -76,9 +80,14 @@
 }
 
 @media (min-width: 480px) {
-  font-size: 2rem;
-  line-height: 2.7rem;
-  width: 3rem;
-  height: 3rem;
+  .button {
+    font-size: 2rem;
+    line-height: 2.7rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
 
+.logo {
+  object-fit: cover;
 }

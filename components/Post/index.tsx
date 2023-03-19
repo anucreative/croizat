@@ -19,7 +19,7 @@ export function Post({ post }: Props) {
     <li className={styles.card}>
       {post.featured_image && (
         <div className={styles.image}>
-          <Image src={post.featured_image} alt={post.slug} fill style={{ objectFit: 'cover' }} />
+          <Image className={styles.cover} src={post.featured_image} alt={post.slug} fill />
         </div>
       )}
       <h3 className={styles.title}>
