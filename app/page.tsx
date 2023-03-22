@@ -4,6 +4,7 @@ import { Parser } from 'html-to-react'
 
 import { Banner } from '../components/Banner'
 import { Contact } from '../components/Contact'
+import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { Map } from '../components/Map'
 import { Partners } from '../components/Partners'
@@ -62,6 +63,7 @@ export default async function Page() {
         <Posts posts={posts.posts} />
         <Partners />
         <Contact />
+        <Footer />
       </section>
     </>
   )

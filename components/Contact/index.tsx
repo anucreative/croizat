@@ -1,14 +1,27 @@
 'use client'
 
+import { useRef, useState } from 'react'
+
 import { Button } from '../Button'
 
 import styles from './styles.module.css'
 
-
-
 export function Contact() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    console.debug(event.target)
+  const formRef = useRef<HTMLFormElement>(null)
+  const [success, setSuccess] = useState(false)
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const data = new FormData(event.currentTarget);
+
+    const result = await fetch('/api/contact', { method: 'post', body: JSON.stringify(Object.fromEntries(data.entries())) })
+
+    if (result.status === 200) {
+      setSuccess(true)
+      formRef?.current?.reset()
+    }
+
+    return false
   }
 
   return (
@@ -16,16 +29,16 @@ export function Contact() {
       <h2>Contacte-nous</h2>
       <div className={styles.grid}>
         <div className={styles.column}>
-          <form action="/send-data-here" method="post" onSubmit={handleSubmit}>
+          <form ref={formRef} method="post" onSubmit={handleSubmit}>
             <input className={styles.input} type="text" id="name" name="name" placeholder='Prénom / Nom' required />
             <input className={styles.input} id="email" name="email" type="email" placeholder='Adresse e-mail' required />
             <textarea className={styles.input} id="comment" name="comment" placeholder='Tes idées / commentaires' required />
-            <Button width="full">Dis-nous</Button>
+            <Button disabled={success} type="submit" width="full">{success ? 'Merci !' : 'Envoyer'}</Button>
           </form>
 
         </div>
         <div className={styles.column}>
-          <dl>
+          <dl className={styles.contact}>
             <dt>Email</dt>
             <dd><a href="mailto:accueil@croizat.fr">accueil@croizat.fr</a></dd>
 

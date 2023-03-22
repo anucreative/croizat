@@ -21,6 +21,16 @@
 }
 
 @media (min-width: 768px) {
-  display: flex;
+  .grid {
+    display: flex;
+  }
+}
 
+.contact dt {
+  text-align: right;
+  padding-right: var(--padding--large);
+}
+
+.contact a {
+  border-color: transparent;
 }

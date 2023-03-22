@@ -5,15 +5,22 @@ import styles from './styles.module.css'
 type Props = {
   as?: keyof JSX.IntrinsicElements
   children: ReactNode
-  href?: string
-  onClick?: (event: React.FormEvent<HTMLButtonElement>) => null
+  disabled?: boolean
+  href?: string | undefined
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onClick?: (event: any) => null
   target?: string
+  type?: string
   width?: string
 }
 
-export function Button({ as: Component = 'a', children, href, target, width = 'auto' }: Props) {
+export function Button({ children, disabled, href, target, type = 'button', width = 'auto', ...rest }: Props) {
+
+  if (type === 'submit' || type === 'button') {
+    <button className={`${styles.button} ${styles[width]}`} disabled={disabled} {...rest}>{children}</button>
+  }
 
   return (
-    <Component href={href} className={`${styles.button} ${styles[width]}`} target={target}>{children}</Component>
+    <a className={`${styles.button} ${styles[width]}`} href={href} target={target} {...rest}>{children}</a>
   )
 }
