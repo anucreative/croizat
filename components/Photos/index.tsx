@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 'use client'
 
 import { useState } from 'react'
@@ -7,8 +9,9 @@ import Image, { StaticImageData } from 'next/image'
 import styles from './styles.module.css'
 
 type Photo = {
-  name: string,
+  children: any
   image: StaticImageData
+  name: string,
 }
 
 export function Photos(props: Photo) {
@@ -47,9 +50,9 @@ export function Photos(props: Photo) {
     <>
       <section id="photos">
         <ul className={styles.list}>
-          {photos.map((node: React.ReactNode, i: number) => {
+          {photos.map((node: any, i: number) => {
             // Photo props are nested as well
-            const photo = node.props?.children?.props
+            const photo = node?.props?.children?.props
             return (
               <li className={styles.item} key={photo?.src} >
                 <Image className={styles.logo} onClick={() => showImage(i)} src={photo['data-orig-file']} alt={photo.alt} fill />
