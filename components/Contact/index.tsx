@@ -26,7 +26,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="section">
-      <h2>Contacte-nous</h2>
+      <h2>Nous contacter</h2>
       <div className={styles.grid}>
         <div className={styles.column}>
           <form ref={formRef} method="post" onSubmit={handleSubmit}>

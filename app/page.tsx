@@ -27,7 +27,7 @@ const parser = new Parser()
 const COMPONENTS = {
   map: Map,
   posts: Posts,
-  instagram: Photos,
+  photos: Photos,
 }
 
 type ComponentKey = keyof typeof COMPONENTS

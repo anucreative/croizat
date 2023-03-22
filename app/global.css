@@ -148,6 +148,11 @@ a:hover {
   text-align: left;
 }
 
+/* La salle */
+#la-salle h3 {
+  text-align: center;
+}
+
 /* Hours / transport */
 #horaires-et-acces .wp-block-column>ul>li {
   display: inline;
