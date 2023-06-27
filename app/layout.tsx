@@ -1,10 +1,10 @@
 import { ReactNode } from 'react'
 
-import { Work_Sans } from '@next/font/google'
+import { Montserrat } from '@next/font/google'
 
 import './global.css'
 
-const workSans = Work_Sans({
+const baseFont = Montserrat({
   weight: ['400', '700'],
   subsets: ["latin"],
   variable: '--font--work-sans',
@@ -17,7 +17,7 @@ type Props = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en" className={workSans.className}>
+    <html lang="en" className={baseFont.className}>
       <body>{children}</body>
     </html>
   );
