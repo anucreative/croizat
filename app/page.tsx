@@ -43,7 +43,7 @@ export default async function Page() {
       <Header />
       <Banner>
         <video autoPlay loop muted playsInline>
-          <source src="./sophia.mp4" type="video/mp4" />
+          <source src="./header-video.mp4" type="video/mp4" />
         </video>
       </Banner>
       <section className='body'>
