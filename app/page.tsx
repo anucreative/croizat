@@ -53,6 +53,9 @@ export default async function Page() {
           // We want to replace placeholders with actual components
           const Component = COMPONENTS[key]
           if (Component) {
+            if (key === 'news') {
+              return null
+            }
             {/* @ts-expect-error Server Component */ }
             return <Component key={key} posts={key === 'news' ? posts.posts : undefined}>{child}</Component>
           }
