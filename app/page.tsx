@@ -26,7 +26,7 @@ const parser = new Parser()
 
 const COMPONENTS = {
   map: Map,
-  posts: Posts,
+  news: Posts,
   photos: Photos,
 }
 
@@ -54,13 +54,11 @@ export default async function Page() {
           const Component = COMPONENTS[key]
           if (Component) {
             {/* @ts-expect-error Server Component */ }
-            return <Component key={key}>{child}</Component>
+            return <Component key={key} posts={key === 'news' ? posts.posts : undefined}>{child}</Component>
           }
 
           return React.cloneElement(child, { ...child.props, key });
         })}
-        {/* @ts-expect-error Server Component */}
-        <Posts posts={posts.posts} />
         <Partners />
         <Contact />
         <Footer />

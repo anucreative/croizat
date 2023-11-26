@@ -58,10 +58,10 @@ export function Header() {
 
 
   const links = [
-    { link: "/#horaires-et-acces", title: "Horaires et accès" },
     { link: "/#la-salle", title: "La salle" },
-    { link: "/#tarifs", title: "Tarifs" },
     { link: "/#events", title: "Évènements" },
+    { link: "/#horaires-et-acces", title: "Horaires et accès" },
+    { link: "/#tarifs", title: "Tarifs" },
     { link: "/#contact", title: "Contact" },
   ]
 

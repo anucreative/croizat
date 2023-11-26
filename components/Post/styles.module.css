@@ -12,7 +12,7 @@
 .image {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 200px;
   border-radius: var(--border--radius);
   overflow: hidden;
   margin-bottom: var(--padding--extra-large)
@@ -20,7 +20,7 @@
 
 @media (min-width: 768px) {
   .image {
-    height: 600px;
+    height: 400px;
   }
 }
 
