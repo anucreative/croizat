@@ -4,7 +4,7 @@
   display: flex;
   align-items: flex-end;
   position: relative;
-  margin-top: calc(var(--height--menu) * -1);
+  margin-top: calc(var(--height--menu) * -1.5);
 }
 
 .banner img,
@@ -22,6 +22,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   z-index: 1;
 }
