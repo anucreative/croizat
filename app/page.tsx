@@ -59,7 +59,7 @@ export default async function Page() {
             {/* @ts-expect-error Server Component */ }
             return <Component key={key} posts={key === 'news' ? posts.posts : undefined}>{child}</Component>
           }
-
+          
           return React.cloneElement(child, { ...child.props, key });
         })}
         <Partners />
